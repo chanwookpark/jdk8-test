@@ -4,6 +4,9 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
+ *
+ * https://docs.oracle.com/javase/8/docs/api/java/util/stream/Collectors.html
+ *
  * @author chanwook
  */
 public class StreamTest {
