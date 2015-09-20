@@ -10,6 +10,28 @@ import java.util.List;
  * @author chanwook
  */
 public class FunctionalTest {
+
+    @Test
+    public void defaultMethod() throws Exception {
+        Formula formula = new Formula() {
+            @Override
+            public double calculate(int a) {
+                return sqrt(a * 100);
+            }
+        };
+
+        assert formula.calculate(100) == 100.0;
+        assert formula.sqrt(16) == 4.0;
+    }
+
+    interface Formula {
+        double calculate(int a);
+
+        default double sqrt(int a) {
+            return Math.sqrt(a);
+        }
+    }
+
     @Test
     public void lambdaBasic() throws Exception {
 
