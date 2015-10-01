@@ -1,6 +1,7 @@
 import org.junit.Test;
 
 import java.time.*;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjusters;
 
@@ -143,5 +144,16 @@ public class DateAndTimeFirstTest {
 
         System.out.printf("d: " + oneDay.toHours());
         assert oneDay.toHours() == -24l;
+    }
+
+    @Test
+    public void format() throws Exception {
+        final LocalDateTime dateTime = LocalDateTime.now();
+        final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm");
+        final String formatted = dateTime.format(formatter);
+        System.out.printf("formatted: " + formatted);
+
+        assert "2015-10-02 07:29".equals(formatted);
+
     }
 }
